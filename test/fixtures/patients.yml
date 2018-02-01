@@ -1,0 +1,53 @@
+# == Schema Information
+#
+# Table name: patients
+#
+#  id          :integer          not null, primary key
+#  first_name  :string
+#  last_name   :string
+#  address     :string
+#  age         :integer
+#  sex         :string           default("Masculino")
+#  departament :string
+#  city        :string
+#  country     :string           default("Guatemala")
+#  email       :string
+#  phone       :string
+#  state       :string           default("active")
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  weight      :integer
+#  size        :string
+#  allergies   :text
+#  medicines   :text
+#  diseases    :text
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  address: MyString
+  age: 1
+  sex: MyString
+  departament: MyString
+  city: MyString
+  country: MyString
+  email: MyString
+  phone: MyString
+  state: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  address: MyString
+  age: 1
+  sex: MyString
+  departament: MyString
+  city: MyString
+  country: MyString
+  email: MyString
+  phone: MyString
+  state: MyString

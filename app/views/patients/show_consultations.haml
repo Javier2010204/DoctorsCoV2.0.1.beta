@@ -1,0 +1,25 @@
+.row.big-padding.blue.white-text.center-xs
+	%h2 Listado de consultas de #{@patient.first_name} #{@patient.last_name}
+-@consultas.each do |consulta|
+	.row.center-xs.large-padding
+		.col-xs-12.col-sm-8.col-lg-6
+			.box.mdl-shadow--2dp.white.relative
+				.actions.absolute
+					%strong= consulta.fecha.strftime('%d-%m-%Y')
+				%h4
+					= link_to consulta.patient.first_name, consulta.patient
+					= link_to consulta.patient.last_name, consulta.patient
+				.row.center-xs.large-padding
+					.col-xs-12.col-sm-6
+						.box
+							%strong Antecedentes
+							%p= consulta.antecedentes
+							%strong Diagnostico
+							%p=consulta.diagnostico
+					.col-xs-12.col-sm-6
+						.box
+							%strong Tratamiento
+							%p= consulta.tratamiento
+							%strong Receta
+							%p= consulta.receta
+						=link_to 'Ver consulta', consulta, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'

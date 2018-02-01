@@ -1,0 +1,7 @@
+I"Š(function() {
+  $(document).on("page:load page:fetch ready", function() {
+    return componentHandler.upgradeDom();
+  });
+
+}).call(this);
+:ET

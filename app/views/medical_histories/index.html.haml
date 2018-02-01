@@ -1,0 +1,33 @@
+%h1 Listing medical_histories
+
+%table
+  %thead
+    %tr
+      %th Weight
+      %th Size
+      %th Alergies
+      %th Medicines
+      %th Diseases
+      %th User
+      %th Patient
+      %th
+      %th
+      %th
+
+  %tbody
+    - @medical_histories.each do |medical_history|
+      %tr
+        %td= medical_history.weight
+        %td= medical_history.size
+        %td= medical_history.alergies
+        %td= medical_history.medicines
+        %td= medical_history.diseases
+        %td= medical_history.user
+        %td= medical_history.patient
+        %td= link_to 'Show', medical_history
+        %td= link_to 'Edit', edit_medical_history_path(medical_history)
+        %td= link_to 'Destroy', medical_history, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Medical history', new_medical_history_path

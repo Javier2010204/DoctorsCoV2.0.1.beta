@@ -1,0 +1,27 @@
+.row.center-xs
+	.col-xs-12
+		.box.blue.white-text.large-padding
+			%h2 Bienvenido #{@user.email}
+.row.center-xs
+	.col-xs-12
+		.box
+			%h2.green-text.underline citas de hoy
+.row.center-xs.full-height.top-space
+	.col-xs-12.col-sm-8.col-lg-6
+		.box.white.mdl-shadow--2dp.add_padding
+			-@appointments.each do |appointment|
+				-if appointment.date == Date.today
+					%h3
+						=appointment.patient.first_name
+						=appointment.patient.last_name
+					%p
+						=appointment.date
+					%p 
+						=appointment.hour.strftime('%H:%M')
+					%p
+						=link_to 'Mostrar', appointment, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'
+				-else
+					%h4.dark-grey-text
+						No hay citas para hoy
+					.text-center
+						=link_to 'Agregar nueva cita', new_appointment_path, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'

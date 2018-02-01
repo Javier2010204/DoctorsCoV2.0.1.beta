@@ -1,0 +1,12 @@
+.row.blue.white-text.center-xs
+  %h1 Comunidad 
+  %p.full-width Aqui puede dar sugerencias y resolver dudas sobre la plataforma
+.row.center-xs.top-space 
+  - @posts.each do |post| 
+    .col-xs-12.col-sm-8
+      .box.mdl-shadow--2dp.white.top-space.relative.large-padding
+        .actions.absolute
+          = post.user.email
+        %h3.underline.light-blue-text
+          = post.title
+        = post.body

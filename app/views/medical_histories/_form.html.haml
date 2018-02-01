@@ -1,0 +1,31 @@
+= form_for @medical_history do |f|
+  - if @medical_history.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@medical_history.errors.count, "error")} prohibited this medical_history from being saved:"
+      %ul
+        - @medical_history.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :weight
+    = f.number_field :weight
+  .field
+    = f.label :size
+    = f.text_field :size
+  .field
+    = f.label :alergies
+    = f.text_area :alergies
+  .field
+    = f.label :medicines
+    = f.text_area :medicines
+  .field
+    = f.label :diseases
+    = f.text_area :diseases
+  .field
+    = f.label :user
+    = f.text_field :user
+  .field
+    = f.label :patient
+    = f.text_field :patient
+  .actions
+    = f.submit 'Save'

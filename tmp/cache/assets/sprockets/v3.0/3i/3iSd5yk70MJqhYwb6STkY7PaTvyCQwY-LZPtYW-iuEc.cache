@@ -1,0 +1,7 @@
+I"ê(function() {
+  $(document).on("turbolinks:load page:fetch ready", function() {
+    return componentHandler.upgradeDom();
+  });
+
+}).call(this);
+:ET

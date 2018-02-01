@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Weight:
+  = @medical_history.weight
+%p
+  %b Size:
+  = @medical_history.size
+%p
+  %b Alergies:
+  = @medical_history.alergies
+%p
+  %b Medicines:
+  = @medical_history.medicines
+%p
+  %b Diseases:
+  = @medical_history.diseases
+%p
+  %b User:
+  = @medical_history.user
+%p
+  %b Patient:
+  = @medical_history.patient
+
+= link_to 'Edit', edit_medical_history_path(@medical_history)
+\|
+= link_to 'Back', medical_histories_path
