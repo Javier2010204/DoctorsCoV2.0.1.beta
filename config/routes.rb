@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
 	authenticated :user do
 		root to: "home#index" 
+		get 'search/create'
 	  	resources :consultations
 		resources :categories
 		resources :posts
